@@ -1,0 +1,13 @@
+.board-container {
+  width: 43vw;
+  height: 43vw;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  justify-content: center;
+  align-items: center;
+}

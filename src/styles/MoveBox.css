@@ -1,0 +1,33 @@
+.move-box-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.move-box {
+  font-size: 1.3vw;
+  font-weight: 600;
+  color: rgb(232, 220, 195);
+  height: 100%;
+  width: 100%;
+  padding-left: 5px;
+}
+
+.current-move {
+  background-color: rgb(190, 81, 81);
+}
+
+.white-move:hover {
+  background-color: rgb(25, 25, 25);
+  cursor: pointer;
+}
+
+.black-move:hover {
+  background-color: rgb(25, 25, 25);
+  cursor: pointer;
+}
+
+.current-move:hover {
+  background-color: rgba(190, 81, 81, 0.8);
+  cursor: pointer;
+}

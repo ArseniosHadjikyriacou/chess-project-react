@@ -1,0 +1,98 @@
+.piece {
+  height: 100%;
+  display: block;
+  margin: auto;
+  z-index: 1;
+}
+
+.sqrw , .sqrb {
+  aspect-ratio: 1/1;
+  position: relative;
+}
+
+.sqrw {
+  background-color: rgb(232, 220, 195);
+  transition-duration: 0.1s;
+}
+
+.sqrw:hover {
+  background-color: rgba(232, 220, 195, 0.8);
+}
+
+.sqrb {
+  background-color: rgb(190, 150, 103);
+  transition-duration: 0.1s;
+}
+
+.sqrb:hover {
+  background-color: rgba(190, 150, 103, 0.8);
+}
+
+
+
+.js-sqrw-legal {
+  background-color: rgb(123, 222, 155);
+}
+
+.js-sqrb-legal {
+  background-color: rgb(20, 164, 65);
+}
+
+.js-sqrw-legal-capture {
+  background-color: rgb(236, 117, 117);
+}
+
+.js-sqrb-legal-capture {
+  background-color: rgb(190, 81, 81);
+}
+
+.js-sqrw-clicked {
+  border-color: red;
+  border-width: 1.5px;
+  border-style: solid;
+  border-radius: 20px;
+}
+
+.js-sqrb-clicked {
+  border-color: red;
+  border-width: 1.5px;
+  border-style: solid;
+  border-radius: 20px;
+}
+
+
+
+.js-sqrw-legal:hover {
+  background-color: rgba(123, 222, 154, 0.8);
+}
+
+.js-sqrb-legal:hover {
+  background-color: rgba(20, 164, 66, 0.8);
+}
+
+.js-sqrw-legal-capture:hover {
+  background-color: rgba(236, 117, 117, 0.8);
+}
+
+.js-sqrb-legal-capture:hover {
+  background-color: rgba(190, 81, 81, 0.8);
+}
+
+
+
+.text-a1,.text-b1,.text-c1,.text-d1,.text-e1,.text-f1,.text-g1,.text-h1,.text-h1n,.text-h2,.text-h3,.text-h4,.text-h5,.text-h6,.text-h7,.text-h8 {
+  position: absolute;
+  font-size: 1.2vw;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.text-a1,.text-b1,.text-c1,.text-d1,.text-e1,.text-f1,.text-g1,.text-h1 {
+  top: -2px;
+  left: 1px;
+}
+
+.text-h2,.text-h3,.text-h4,.text-h5,.text-h6,.text-h7,.text-h8 {
+  top: -1px;
+  right: 1px;
+}
