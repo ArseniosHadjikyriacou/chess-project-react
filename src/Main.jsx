@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Chess } from 'chess.js'
+import generateComputerMove from './utils/chess-api.js'
 import ChessBoard from './ChessBoard.jsx'
 import MovesDisplay from './MovesDisplay.jsx'
 import GameMode from './GameMode.jsx'
@@ -15,8 +16,18 @@ export default function Main() {
 
   const [sqrsState,setSqrsState] = useState( Array(8).fill().map(() => Array(8).fill(0)) )
 
+  const [gameMode,setGameMode] = useState( 'Analysis' )
+
   localStorage.setItem('fen', JSON.stringify(fen));
   localStorage.setItem('moves', JSON.stringify(moves));
+
+  function handleSubmitMode(event) {
+    event.preventDefault()
+    const formEl = event.currentTarget
+    const formData = new FormData(formEl)
+    const mode = formData.get('mode-selector')
+    setGameMode(mode)
+  }
 
   function statusToDisplay (color) {
     const chess = new Chess()
@@ -30,7 +41,7 @@ export default function Main() {
         <div className='turn-container'>
           <div className='white-box'></div>
           <div className='status-text'>Checkmate!</div>
-          <GameMode />
+          <GameMode onSubmit={handleSubmitMode} />
         </div>
         )
       } else {
@@ -38,7 +49,7 @@ export default function Main() {
           <div className='turn-container'>
             <div className='black-box'></div>
             <div className='status-text'>Checkmate!</div>
-            <GameMode />
+            <GameMode onSubmit={handleSubmitMode} />
           </div>
           )
       }
@@ -48,7 +59,7 @@ export default function Main() {
         <div className='turn-container'>
           <div className='white-box'></div>
           <div className='status-text'>Stalemate!</div>
-          <GameMode />
+          <GameMode onSubmit={handleSubmitMode} />
         </div>
         )
       } else {
@@ -56,7 +67,7 @@ export default function Main() {
           <div className='turn-container'>
             <div className='black-box'></div>
             <div className='status-text'>Stalemate!</div>
-            <GameMode />
+            <GameMode onSubmit={handleSubmitMode} />
           </div>
           )
       }
@@ -66,7 +77,7 @@ export default function Main() {
         <div className='turn-container'>
           <div className='white-box'></div>
           <div className='status-text'>White to play</div>
-          <GameMode />
+          <GameMode onSubmit={handleSubmitMode} />
         </div>
         )
       } else {
@@ -74,12 +85,17 @@ export default function Main() {
           <div className='turn-container'>
             <div className='black-box'></div>
             <div className='status-text'>Black to play</div>
-            <GameMode />
+            <GameMode onSubmit={handleSubmitMode} />
           </div>
           )
       }
     }
     
+  }
+
+  const playColor = fen.history[fen.moveNumber].split(' ')[1]
+  if (gameMode === 'Computer' && playColor === 'b') {
+    generateComputerMove(fen,setFen,setMoves,setSqrsState)
   }
   
   return (

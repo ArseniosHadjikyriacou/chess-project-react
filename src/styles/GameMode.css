@@ -1,15 +1,59 @@
-.select-radio-form label {
-  display: inline-block;
-  line-height: 50px;
-  white-space: nowrap;
+.select-radio-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.radio-fieldset {
+  border-color: rgb(190, 81, 81);
+  margin-bottom: 10px;
+}
+
+.fieldset-title {
+  font-size: 3.5vmin;
+  color: rgb(232, 220, 195);
+  font-weight: 600;
+  align-items: center;
+}
+
+.radio-button {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.radio-button > input {
+  height: 4vmin; 
+  width: 4vmin;
+  margin: 1vmin;
+  accent-color: rgb(190, 81, 81);
+}
+
+.radio-button > label {
+  font-size: 3vmin;
   color: rgb(232, 220, 195);
 }
-.select-radio-form input label span {
-  vertical-align: middle;
+
+.Apply-button {
+  height: 3.3vw;
+  width: 8vw;
+  font-size: 2vw;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-top: 0px;
+  line-height: 0px;
+  background-color: rgb(232, 220, 195);
+  transition-duration: 0.15s;
+  border-radius: 1.5vw;
 }
-.select-radio-form input {
-  height: 3vmin; 
-  width: 3vmin;
-  margin: 1vmin;
-  accent-color: rgb(232, 220, 195);
+
+.Apply-button:hover{
+  background-color: rgba(232, 220, 195, 0.8);
+}
+
+.Apply-button:active{
+  background-color: rgb(190, 150, 103);
 }

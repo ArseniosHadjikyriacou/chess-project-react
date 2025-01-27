@@ -90,7 +90,6 @@ export default function ChessBoard({fen,sqrsState,setFen,setMoves,setSqrsState})
 
   function generateSquares(board) {
     let sqrElements = [];
-
     for (let y = 0; y <= 7; y++) {
       if (y % 2 === 0) {
         for (let x = 0; x <= 7; x++) {
@@ -116,6 +115,7 @@ export default function ChessBoard({fen,sqrsState,setFen,setMoves,setSqrsState})
         }
       }
     }
+
     
     return sqrElements
   }
