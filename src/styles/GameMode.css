@@ -1,0 +1,15 @@
+.select-radio-form label {
+  display: inline-block;
+  line-height: 50px;
+  white-space: nowrap;
+  color: rgb(232, 220, 195);
+}
+.select-radio-form input label span {
+  vertical-align: middle;
+}
+.select-radio-form input {
+  height: 3vmin; 
+  width: 3vmin;
+  margin: 1vmin;
+  accent-color: rgb(232, 220, 195);
+}

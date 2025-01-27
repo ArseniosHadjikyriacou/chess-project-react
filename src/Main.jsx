@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Chess } from 'chess.js'
 import ChessBoard from './ChessBoard.jsx'
 import MovesDisplay from './MovesDisplay.jsx'
+import GameMode from './GameMode.jsx'
 import './styles/Main.css'
 
 export default function Main() {
@@ -17,7 +18,7 @@ export default function Main() {
   localStorage.setItem('fen', JSON.stringify(fen));
   localStorage.setItem('moves', JSON.stringify(moves));
 
-  function textToDisplay (color) {
+  function statusToDisplay (color) {
     const chess = new Chess()
     chess.load(fen.history[fen.moveNumber])
     const isCheckmate = chess.isCheckmate()
@@ -29,6 +30,7 @@ export default function Main() {
         <div className='turn-container'>
           <div className='white-box'></div>
           <div className='status-text'>Checkmate!</div>
+          <GameMode />
         </div>
         )
       } else {
@@ -36,6 +38,7 @@ export default function Main() {
           <div className='turn-container'>
             <div className='black-box'></div>
             <div className='status-text'>Checkmate!</div>
+            <GameMode />
           </div>
           )
       }
@@ -45,6 +48,7 @@ export default function Main() {
         <div className='turn-container'>
           <div className='white-box'></div>
           <div className='status-text'>Stalemate!</div>
+          <GameMode />
         </div>
         )
       } else {
@@ -52,6 +56,7 @@ export default function Main() {
           <div className='turn-container'>
             <div className='black-box'></div>
             <div className='status-text'>Stalemate!</div>
+            <GameMode />
           </div>
           )
       }
@@ -61,6 +66,7 @@ export default function Main() {
         <div className='turn-container'>
           <div className='white-box'></div>
           <div className='status-text'>White to play</div>
+          <GameMode />
         </div>
         )
       } else {
@@ -68,6 +74,7 @@ export default function Main() {
           <div className='turn-container'>
             <div className='black-box'></div>
             <div className='status-text'>Black to play</div>
+            <GameMode />
           </div>
           )
       }
@@ -80,7 +87,7 @@ export default function Main() {
     <div className='main-section'>
       <ChessBoard fen={fen} sqrsState={sqrsState} setFen={setFen} setMoves={setMoves} setSqrsState={setSqrsState} />
       <MovesDisplay moves={moves} setFen={setFen} setMoves={setMoves} setSqrsState={setSqrsState} />
-      {textToDisplay(fen.history[fen.moveNumber].split(' ')[1])}
+      {statusToDisplay(fen.history[fen.moveNumber].split(' ')[1])}
     </div>
 
   )
