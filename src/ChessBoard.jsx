@@ -54,7 +54,7 @@ export default function ChessBoard({fen,sqrsState,setFen,setMoves,setSqrsState})
 
     let newMoveObject;
     if (pieceToMove.toLowerCase() === 'p' && (sqrFinalNum[1] === '0' || sqrFinalNum[1] === '7')) {
-      newMoveObject = chess.move({ from: sqrInitialAlg, to: sqrFinalAlg, promotion: 'Q' });
+      newMoveObject = chess.move({ from: sqrInitialAlg, to: sqrFinalAlg, promotion: 'q' });
     } else {
       newMoveObject = chess.move({ from: sqrInitialAlg, to: sqrFinalAlg });
     }
@@ -67,11 +67,21 @@ export default function ChessBoard({fen,sqrsState,setFen,setMoves,setSqrsState})
     }
 
     setFen(prevFen => {
-      return { history: [...prevFen.history,chess.fen()], moveNumber: prevFen.moveNumber+1 }
+      const mismatch = prevFen.history.length - (prevFen.moveNumber+1)
+      if (mismatch === 0) {
+        return { history: [...prevFen.history,chess.fen()], moveNumber: prevFen.moveNumber+1 }
+      } else {
+        return { history: [...prevFen.history.slice(0, -mismatch),chess.fen()], moveNumber: prevFen.moveNumber+1 }
+      }
     });
 
     setMoves(prevMoves => {
-      return { history: [...prevMoves.history,newMoveSan], moveNumber: prevMoves.moveNumber+1 }
+      const mismatch = prevMoves.history.length - prevMoves.moveNumber
+      if (mismatch === 0) {
+        return { history: [...prevMoves.history,newMoveSan], moveNumber: prevMoves.moveNumber+1 }
+      } else {
+        return { history: [...prevMoves.history.slice(0, -mismatch),newMoveSan], moveNumber: prevMoves.moveNumber+1 }
+      }
     });
 
     setSqrsState( Array(8).fill().map(() => Array(8).fill(0)) );

@@ -2,7 +2,39 @@
   display: flex;
   gap: 20px;
   margin-left: 35px;
+}
 
-  /* flex: 1; */
-  /* align-items: center; */
+.turn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.white-box {
+  background-color: white;
+  height: 5vw;
+  width: 5vw;
+  margin-bottom: 10px;
+  border-style: solid;
+  border-color: rgb(190, 81, 81);
+  border-width: 5px;
+  margin-bottom: 10px;
+}
+
+.black-box {
+  background-color: black;
+  height: 5vw;
+  width: 5vw;
+  margin-bottom: 10px;
+  border-style: solid;
+  border-color: rgb(190, 81, 81);
+  border-width: 5px;
+  margin-bottom: 10px;
+}
+
+.status-text {
+  font-size: 2vw;
+  color: rgb(232, 220, 195);
+  width: 14vw;
+  text-align: center;
 }

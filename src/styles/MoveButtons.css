@@ -1,0 +1,56 @@
+.buttons-container{
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(2, 1fr);
+  justify-content: right;
+  grid-gap: 1vmin;
+  margin-right: 0;
+}
+
+.move-buttons-container{
+  display: flex;
+  gap: 1vmin;
+  justify-content: center;
+  align-items: center;
+}
+
+.backward,.forward{
+  height: 3.8vw;
+  width: 3.8vw;
+  font-size: 4vw;
+  font-weight: 600;
+  padding: 0px;
+  line-height: 0px;
+  background-color: rgb(232, 220, 195);
+  transition-duration: 0.15s;
+  border-radius: 1vw;
+}
+
+.backward:hover,.forward:hover,.reset:hover{
+  background-color: rgba(232, 220, 195, 0.8);
+}
+
+.backward:active,.forward:active,.reset:active{
+  background-color: rgb(190, 150, 103);
+}
+
+.reset-button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reset{
+  height: 3.3vw;
+  width: 9vw;
+  font-size: 2.3vw;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-top: 0px;
+  line-height: 0px;
+  background-color: rgb(232, 220, 195);
+  transition-duration: 0.15s;
+  border-radius: 1.5vw;
+}
