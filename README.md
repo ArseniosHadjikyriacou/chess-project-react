@@ -1,0 +1,1 @@
+A simple chess app made using React. Analyze or play against another player or a stockfish API at https://chess-api.com/. A deployed version of this app can be found at: https://arsenioshadjikyriacou.github.io/chess-project-react/

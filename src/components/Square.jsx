@@ -1,6 +1,6 @@
 import FullSquare from './FullSquare';
 import EmptySquare from './EmptySquare';
-import './styles/Square.css'
+import '../styles/Square.css'
 
 export default function Square({xy,sqrColor,playColor,fenChar,sqrsState,onClickPiece,onClickMove}) {
 

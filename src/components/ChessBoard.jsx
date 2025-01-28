@@ -1,8 +1,8 @@
 import { Chess } from 'chess.js'
 import Square from './Square.jsx'
-import { fenTo2D,numbersToLetters,lettersToNumbers } from './utils/fenNotation.js'
-import indexOf2D from './utils/indexOf2D.js'
-import './styles/ChessBoard.css'
+import { fenTo2D,numbersToLetters,lettersToNumbers } from '../utils/fenNotation.js'
+import indexOf2D from '../utils/indexOf2D.js'
+import '../styles/ChessBoard.css'
 
 export default function ChessBoard({fen,sqrsState,setFen,setMoves,setSqrsState}) {
 

@@ -1,16 +1,16 @@
-import P from './assets/wP.svg'
-import R from './assets/wR.svg'
-import N from './assets/wN.svg'
-import B from './assets/wB.svg'
-import Q from './assets/wQ.svg'
-import K from './assets/wK.svg'
-import p from './assets/bP.svg'
-import r from './assets/bR.svg'
-import n from './assets/bN.svg'
-import b from './assets/bB.svg'
-import q from './assets/bQ.svg'
-import k from './assets/bK.svg'
-import { textSquares,textElements } from "./data/specialSquares.jsx"
+import P from '../assets/wP.svg'
+import R from '../assets/wR.svg'
+import N from '../assets/wN.svg'
+import B from '../assets/wB.svg'
+import Q from '../assets/wQ.svg'
+import K from '../assets/wK.svg'
+import p from '../assets/bP.svg'
+import r from '../assets/bR.svg'
+import n from '../assets/bN.svg'
+import b from '../assets/bB.svg'
+import q from '../assets/bQ.svg'
+import k from '../assets/bK.svg'
+import { textSquares,textElements } from "../data/specialSquares.jsx"
 
 
 export default function FullSquare({xy,sqrColor,playColor,pieceColor,fenChar,sqrsState,onClickPiece,onClickMove}) {

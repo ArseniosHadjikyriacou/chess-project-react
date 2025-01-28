@@ -1,4 +1,4 @@
-import { textSquares,textElements } from "./data/specialSquares.jsx"
+import { textSquares,textElements } from "../data/specialSquares.jsx"
 
 export default function EmptySquare({xy,sqrColor,sqrsState,onClickMove}) {
 

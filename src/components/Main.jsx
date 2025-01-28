@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { Chess } from 'chess.js'
-import generateComputerMove from './utils/chess-api.js'
+import generateComputerMove from '../utils/chess-api.js'
 import ChessBoard from './ChessBoard.jsx'
 import MovesDisplay from './MovesDisplay.jsx'
 import GameMode from './GameMode.jsx'
-import './styles/Main.css'
+import '../styles/Main.css'
 
 export default function Main() {
   

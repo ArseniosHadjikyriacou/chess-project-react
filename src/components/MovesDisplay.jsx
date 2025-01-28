@@ -1,6 +1,6 @@
 import MoveBox from './MoveBox.jsx'
 import MoveButtons from './MoveButtons.jsx'
-import './styles/MovesDisplay.css'
+import '../styles/MovesDisplay.css'
 
 export default function MovesDisplay({moves,setFen,setMoves,setSqrsState}) {
 

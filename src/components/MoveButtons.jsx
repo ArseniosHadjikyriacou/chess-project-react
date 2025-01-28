@@ -1,4 +1,4 @@
-import './styles/MoveButtons.css'
+import '../styles/MoveButtons.css'
 
 export default function MovesButtons({onClickBack,onClickForw,onReset}) {
 

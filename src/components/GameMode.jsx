@@ -1,4 +1,4 @@
-import './styles/GameMode.css'
+import '../styles/GameMode.css'
 
 export default function GameMode({onSubmit}) {
   return (

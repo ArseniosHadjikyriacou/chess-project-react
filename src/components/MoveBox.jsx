@@ -1,4 +1,4 @@
-import './styles/MoveBox.css'
+import '../styles/MoveBox.css'
 
 export default function MoveBox({move,moveOrder,moveNumber,onClickText}) {
 
