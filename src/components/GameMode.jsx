@@ -1,9 +1,9 @@
 import '../styles/GameMode.css'
 
-export default function GameMode({onSubmit}) {
+export default function GameMode({onChange}) {
   return (
 
-    <form onSubmit={onSubmit} method="post" className="select-radio-form">
+    <form onChange={onChange} className="select-radio-form">
 
       <fieldset className="radio-fieldset">
         <legend className='fieldset-title'>Game mode:</legend>
@@ -19,8 +19,6 @@ export default function GameMode({onSubmit}) {
         </div>
 
       </fieldset>
-
-      <button className='Apply-button'>Apply</button>
 
     </form>
 

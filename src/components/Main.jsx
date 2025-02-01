@@ -21,8 +21,7 @@ export default function Main() {
   localStorage.setItem('fen', JSON.stringify(fen));
   localStorage.setItem('moves', JSON.stringify(moves));
 
-  function handleSubmitMode(event) {
-    event.preventDefault()
+  function handleChangeMode(event) {
     const formEl = event.currentTarget
     const formData = new FormData(formEl)
     const mode = formData.get('mode-selector')
@@ -41,7 +40,7 @@ export default function Main() {
         <div className='turn-container'>
           <div className='white-box'></div>
           <div className='status-text'>Checkmate!</div>
-          <GameMode onSubmit={handleSubmitMode} />
+          <GameMode onChange={handleChangeMode} />
         </div>
         )
       } else {
@@ -49,7 +48,7 @@ export default function Main() {
           <div className='turn-container'>
             <div className='black-box'></div>
             <div className='status-text'>Checkmate!</div>
-            <GameMode onSubmit={handleSubmitMode} />
+            <GameMode onChange={handleChangeMode} />
           </div>
           )
       }
@@ -59,7 +58,7 @@ export default function Main() {
         <div className='turn-container'>
           <div className='white-box'></div>
           <div className='status-text'>Stalemate!</div>
-          <GameMode onSubmit={handleSubmitMode} />
+          <GameMode onChange={handleChangeMode} />
         </div>
         )
       } else {
@@ -67,7 +66,7 @@ export default function Main() {
           <div className='turn-container'>
             <div className='black-box'></div>
             <div className='status-text'>Stalemate!</div>
-            <GameMode onSubmit={handleSubmitMode} />
+            <GameMode onChange={handleChangeMode} />
           </div>
           )
       }
@@ -77,7 +76,7 @@ export default function Main() {
         <div className='turn-container'>
           <div className='white-box'></div>
           <div className='status-text'>White to play</div>
-          <GameMode onSubmit={handleSubmitMode} />
+          <GameMode onChange={handleChangeMode} />
         </div>
         )
       } else {
@@ -85,7 +84,7 @@ export default function Main() {
           <div className='turn-container'>
             <div className='black-box'></div>
             <div className='status-text'>Black to play</div>
-            <GameMode onSubmit={handleSubmitMode} />
+            <GameMode onChange={handleChangeMode} />
           </div>
           )
       }
